@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sales |</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+        <header>
+                <div class="logo">Chop<span class="red">Chop</span> </div>
+                <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="sales.html">Sales History</a>
+                    <a href="#" class="notify" onclick="document.getElementById('id02').style.display='block'"">ADD MENU</a>
+                    <a href="allorders.html">All Orders</a>
+                    <a href="">Logout</a>
+                </div>
+                  
+                  <div id="main">
+                    <button class="openbtn" onclick="openNav()">&#9776; Menu</button> 
+                    </div>
+            </header>
+
+           
+                  
+            
+                  
+            
+            <main class="menus">
+              <h2>ALL SALES</h2>
+                  <table>
+                      <tr>
+                          <th>CUSTOMER NAME</th>
+                          <th>ORDER</th>
+                          <th>PRICE</th>
+                          <th>DATES</th>
+                      </tr>
+                      <tr>
+                          <td>PMB</td>
+                          <td>Tuwo shinkafa</td>
+                          <td>NGN 7000</td>
+                          <td>27-02-2017</td>
+                      </tr>
+                      <tr>
+                            <td>PMB</td>
+                            <td>Tuwo shinkafa</td>
+                            <td>NGN 7000</td>
+                            <td>27-02-2017</td>
+                        </tr>
+                        <tr>
+                                <td>GEJ</td>
+                                <td>Tuwo shinkafa</td>
+                                <td>NGN 7000</td>
+                                <td>27-02-2017</td>
+                            </tr>
+                            <tr>
+                                    <td>Starboy Vp</td>
+                                    <td>Tuwo shinkafa</td>
+                                    <td>NGN 7000</td>
+                                    <td>27-02-2017</td>
+                                </tr>
+                                <tr>
+                                    <td>TOTAL :</td>
+                                </tr>
+                  </table>
+
+
+              <div id="id01" class="modal ">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <form name="edit-meal" class="modal-content edit-meal" action="">
+                            <h2>EDIT FOOD ITEM</h2>
+                            <p><input type="text" name="food-item" placeholder="Food Name" required></p>
+                            <p><input type="text" name="food-image" placeholder="Food Image URL"></p>
+                            <p><input type="number" name="food-price" placeholder="Price" required></p>
+                             <p><input type="submit" name="submit" value="Add" class="btn-primary"></p>
+                    </form>
+                  </div>
+                  <div id="id02" class="modal">
+                              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                              <form name="add-meal" class="modal-content edit-meal" action="">
+                                      <h2>ADD FOOD ITEMS</h2>
+                                      <p><input type="text" name="food-item" placeholder="Food Name" required></p>
+                                      <p><input type="text" name="food-image" placeholder="Food Image URL"></p>
+                                      <p><input type="number" name="food-price" placeholder="Price" required></p>
+                                       <p><input type="submit" name="submit" value="Add" class="btn-primary"></p>
+                              </form>
+                      </div>
+            </main>
+            <script src="styles.js"></script>
+</body>
+</html>

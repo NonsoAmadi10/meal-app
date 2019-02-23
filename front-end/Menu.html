@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Menu |</title>
+</head>
+<body>
+        <header>
+                <div class="logo">Chop<span class="red">Chop</span> </div>
+                <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <button class="btn-cart" onclick="document.getElementById('id01').style.display='block'"><a href="#">Cart</a></button>
+                    <a href="#" class="notify" onclick="document.getElementById('id02').style.display='block'"">Notification</a>
+                    <a href="customerhistory.html">Order History</a>
+                    <a href="">Logout</a>
+                </div>
+                  
+                  <div id="main">
+                    <button class="openbtn" onclick="openNav()">&#9776; Menu</button> 
+                    </div>
+            </header>
+
+           
+                  
+            
+            <main class="menus">
+              <h2>Meals Available Today</h2>
+              <div class="menu-list">
+                  <div class="grid-2 food">
+                      <div>
+                            <img src="images/pexels-photo-1440119.jpeg" alt="">
+                      </div>
+                      <div class="info">
+                            <p class="item-name">BEEF AND RICE !!</p>
+                            <p class="item-price">NGN 700</p>
+                            <button type="submit">ADD TO CART</button>
+                      </div>
+                  </div>
+                  <div class="grid-2 food">
+                        <div>
+                              <img src="images/pexels-photo-1440119.jpeg" alt="">
+                        </div>
+                        <div class="info">
+                              <p class="item-name">BEEF AND RICE !!</p>
+                              <p class="item-price">NGN 700</p>
+                              <button type="submit">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="grid-2 food">
+                            <div>
+                                  <img src="images/pexels-photo-1440119.jpeg" alt="">
+                            </div>
+                            <div class="info">
+                                  <p class="item-name">BEEF AND RICE !!</p>
+                                  <p class="item-price">NGN 700</p>
+                                  <button type="submit">ADD TO CART</button>
+                            </div>
+                        </div>
+              </div>
+
+
+              <div id="id01" class="modal">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <form class="modal-content" action="">
+                      <div class="food-details">
+                          <span class="item-name">BEEF AND RICE</span> <span class="item-price">NGN 800</span>
+                      </div>
+                    </form>
+                  </div>
+                  <div id="id02" class="modal">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <form class="modal-content" action="">
+                          <div class="food-details">
+                              <span class="notice"> Your request is processing ....</span> 
+                          </div>
+                        </form>
+                      </div>
+            </main>
+       <footer>
+           
+           <p>&copy; 2019</p>
+       </footer>
+            <script src="styles.js"></script>
+</body>
+</html>
