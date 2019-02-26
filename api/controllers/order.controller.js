@@ -10,7 +10,7 @@ const OrderController = {
   },
   addOrder(req, res) {       
     const newMeal = req.body;
-    const createdOrder = OrderService.addMeal(newMeal);
+    const createdOrder = OrderService.addOrders(newMeal);
     if (!createdOrder) {
       return res.json({
         status: 404,
@@ -25,16 +25,16 @@ const OrderController = {
     },
     getSingleOrder(req, res) {
     const id = req.params.id;
-    const foundOrder = OrderService.getAMeal(id);
+    const foundOrder = OrderService.getOrderbyId(id);
     return res.json({
       status: 'success',
       data: foundOrder
     }).status(200);
   },
-  patchMeal(req, res) {
+  patchOrder(req, res) {
     const { id } = req.params;
     const data = req.body;
-    const updated = OrderService.UpdateMeal(id, data);
+    const updated = OrderService.UpdateOrders(id, data);
     return res.json({
       status: 'success',
       data: updated
@@ -42,7 +42,7 @@ const OrderController = {
   },
   deleteOrder(req, res) {
     const { id } = req.params;
-    const deleted = OrderService.DeleteMeal(id);
+    const deleted = OrderService.DeleteOrder(id);
     return res.json({
       status: 'success',
       data: deleted

@@ -6,8 +6,8 @@ import MenuController from '../controllers/menu.controller';
 
 const router = Router();
 
-router.get('/', MenuController.fetchAllMeals);
-router.post('/', MenuController.addAMeal);
-router.get('/:id', MenuController.getSingleMeal);
+router.get('/', MenuController.fetchAllMenu);
+router.post('/', MenuController.addAMenu);
+router.get('/:id', MenuController.getSingleMenu);
 
 export default router;
