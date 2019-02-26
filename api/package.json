@@ -6,7 +6,13 @@
   "scripts": {
     "test": "nyc _mocha test/*.test.js --recursive --require @babel/register --timeout 10000 --exit",
     "start": "nodemon --exec babel-node index.js",
-    "coverage": "istanbul cover _mocha test/*.test.js --recursive --require @babel/register"
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel ./api -d ./build",
+    "build": "npm run clean && npm run build-babel",
+    "generate-lcov": "nyc report --reporter=text-lcov >lcov.info",
+    "coveralls-coverage": "coveralls < lcov.info",
+    "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
+    "coverage": "nyc npm test && npm run generate-lcov && npm run coveralls-coverage && npm run codeclimate-coverage"
   },
   "repository": {
     "type": "git",
@@ -35,6 +41,7 @@
     "babel-plugin-istanbul": "^5.1.1",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "codeclimate-test-reporter": "^0.5.1",
     "coveralls": "^3.0.3",
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
