@@ -20,3 +20,6 @@ app.use('/api/v1/meals', mealRoutes);
 app.use('/api/v1/menu', menuRoutes);
 app.use('/api/v1/orders', OrderRoutes);
 app.listen(port, console.log(`Server is running on ${port}`));
+
+
+export default app;

@@ -14,6 +14,9 @@ const MealService = {
     return validMeals;
   },
   addMeal(meal) {
+    if ( meal.name == '' || meal.price == '' || meal.size == '') {
+      return false;
+    }
     const mealLength = dummyData.meals.length;
     const lastId = dummyData.meals[mealLength - 1].id;
     const newId = lastId + 1;
@@ -33,16 +36,17 @@ const MealService = {
       price: data.price,
       name: data.name,
       size: data.size
-    }
+    };
 
     const updated = dummyData.meals.splice(mealIndex, 1, newData);
-    return updated;
+    return newData || {};
   },
   DeleteMeal(id) {
     const deleteOrder = dummyData.meals.find(item => item.id == id);
-        const deleteIndex = dummyData.meals.indexOf(deleteOrder);
-        const removeOrder = dummyData.meals.splice(deleteIndex, 1);
-        return removeOrder || {};
+    const deleteIndex = dummyData.meals.indexOf(deleteOrder);
+    if (deleteIndex == -1) throw Error;
+    const removeOrder = dummyData.meals.splice(deleteIndex, 1);
+    return removeOrder || {};
   }
 };
 
