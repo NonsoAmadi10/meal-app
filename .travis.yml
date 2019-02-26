@@ -4,8 +4,16 @@ node_js:
 cache:
   directories:
     - "api/node_modules"
+env:
+  global:
+    - CODECLIMATE_REPO_TOKEN=40976024e468d1646320c31bc10bfbf39c11e0e1248b159d8f6de7e277df435f
+before_install : 
+ - cd api/
+ - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+ - chmod +x ./cc-test-reporter
+  #- export DISPLAY=:99.0                # Display number for xvfb (for headless browser testing)
+  #- sh -e /etc/init.d/xvfb start        # Start xvfb (for headless browser testing)
 
-before_install : cd api/
 
 install:
   - npm install
