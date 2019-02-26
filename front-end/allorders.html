@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Menu |</title>
+</head>
+<body>
+        <header>
+                <div class="logo">Chop<span class="red">Chop</span> </div>
+                <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="sales.html">Sales History</a>
+                    <a href="#" class="notify" onclick="document.getElementById('id01').style.display='block'"">ADD MENU</a>
+                    <a href="allorders.html">All Orders</a>
+                    <a href="">Logout</a>
+                </div>
+                  
+                  <div id="main">
+                    <button class="openbtn" onclick="openNav()">&#9776; Menu</button> 
+                    </div>
+            </header>
+
+           
+                  
+            
+            <main class="menus">
+              <h2>People are hungry ...</h2>
+              <div class="menu-list">
+                  <div class="grid-2 food">
+                      <p>Customer name: PMB</p>
+                      <div class="info admin">
+                            <p class="item-name">BEEF AND RICE !!</p>
+                            <p class="item-price">NGN 700</p>
+                           <p class="billing-address">27, Etueke, Bayelsa</p>
+                           <p class="phone-number">+234567997</p>
+                           <button class="edit "id="accept-order">ACCEPT</button>
+                           <button class="delete" id="reject-order">REJECT</button>
+                      </div>
+                      
+                  </div>
+                  <div class="grid-2 food">
+                        <p>Customer name: PMB</p>
+                        <div class="info admin">
+                              <p class="item-name">Pap and Akara !!</p>
+                              <p class="item-price">NGN 700</p>
+                             <p class="billing-address">27, Etueke, Bayelsa</p>
+                             <p class="phone-number">+234567997</p>
+                             <button class="edit "id="accept-order">ACCEPT</button>
+                           <button class="delete" id="reject-order">REJECT</button>
+                        </div>
+                    </div>
+                    <<div class="grid-2 food">
+                            <p>Customer name: Starboy Vp</p>
+                            <div class="info admin">
+                                  <p class="item-name">BEEF AND RICE !!</p>
+                                  <p class="item-price">NGN 700</p>
+                                 <p class="billing-address">27, Jimipapa, Ghana</p>
+                                 <p class="phone-number">+234567997</p>
+                                 <button class="edit "id="accept-order">ACCEPT</button>
+                           <button class="delete" id="reject-order">REJECT</button>
+                            </div>
+                        </div>
+              </div>
+
+
+              <div id="id01" class="modal ">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <form name="add-meal" class="modal-content edit-meal" action="">
+                            <h2>ADD FOOD ITEMS</h2>
+                            <p><input type="text" name="food-item" placeholder="Food Name" required></p>
+                            <p><input type="text" name="food-image" placeholder="Food Image URL"></p>
+                            <p><input type="number" name="food-price" placeholder="Price" required></p>
+                             <p><input type="submit" name="submit" value="Add" class="btn-primary"></p>
+                    </form>
+                  </div>
+                  
+            </main>
+       <footer>
+           
+           <p>&copy; 2019</p>
+       </footer>
+            <script src="styles.js"></script>
+</body>
+</html>
