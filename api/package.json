@@ -4,8 +4,9 @@
   "description": "A meal booking application",
   "main": "index.js",
   "scripts": {
-    "test":"mocha test/*.test.js --recursive --require @babel/register --timeout 10000 --exit" ,
-    "start": "nodemon --exec babel-node index.js"
+    "test": "nyc _mocha test/*.test.js --recursive --require @babel/register --timeout 10000 --exit",
+    "start": "nodemon --exec babel-node index.js",
+    "coverage": "babel-node api/node_modules/istanbul/lib/cli cover _mocha test/."
   },
   "repository": {
     "type": "git",
@@ -31,12 +32,15 @@
     "@babel/core": "^7.3.3",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
+    "babel-plugin-istanbul": "^5.1.1",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
+    "istanbul": "^0.4.5",
     "mocha": "^6.0.1",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "nyc": "^13.3.0"
   }
 }
