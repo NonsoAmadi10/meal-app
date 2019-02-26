@@ -15,6 +15,7 @@ const OrderService = {
     return Order;
   },
   addMeal(order) {
+    if (order.customer == '' || order.meal == '' || order.price == '' || order.status == '') return false;
     const mealLength = dummyData.length;
     const lastId = dummyData[mealLength - 1].id;
     const newId = lastId + 1;
@@ -27,26 +28,26 @@ const OrderService = {
     return order || {};
   },
   UpdateMeal(id, data) {
-        const order = dummyData.find(item => item.id == id);
-        const mealIndex = dummyData.indexOf(order);
-        const newData = {
-          id: order.id,
-          customer: data.customer,
-          meal: data.meal,
-          price: data.price,
-          status: data.status
-        }
+    const order = dummyData.find(item => item.id == id);
+    const mealIndex = dummyData.indexOf(order);
+    const newData = {
+      id: order.id,
+      customer: data.customer,
+      meal: data.meal,
+      price: data.price,
+      status: data.status
+    }
     
-        const updated = dummyData.splice(mealIndex, 1, newData);
-        return updated;
-      },
-      DeleteMeal(id) {
-        const deleteOrder = dummyData.find(item => item.id == id);
-        const deleteIndex = dummyData.indexOf(deleteOrder);
-        const removeOrder = dummyData.splice(deleteIndex, 1);
-        return removeOrder || {};
-      }
-   
+    const updated = dummyData.splice(mealIndex, 1, newData);
+    return newData;
+  },
+  DeleteMeal(id) {
+    const deleteOrder = dummyData.find(item => item.id == id);
+    const deleteIndex = dummyData.indexOf(deleteOrder);
+    if (deleteIndex == -1) throw Error;
+    const removeOrder = dummyData.splice(deleteIndex, 1);
+    return removeOrder || {};
+  }
 };
 
 export default OrderService;

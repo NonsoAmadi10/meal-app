@@ -9,12 +9,21 @@ const MealController = {
     }).status(200);
   },
   addAMeal(req, res) {
-    const newMeal = req.body;
-    const createdMeal = MealService.addMeal(newMeal);
-    return res.json({
-      status: 'success',
-      data: createdMeal
-    }).status(201);
+     if (req.body.name === '' || req.body.price === '' || req.body.price === '') {
+       return res.json({ 
+         status: 'Error',
+         Error: 'Empty body request'
+       }).status(404);
+     }
+     else {
+      const newMeal = req.body;
+      const createdMeal = MealService.addMeal(newMeal);
+      return res.json({
+        status: 'success',
+        data: createdMeal
+      }).status(201);
+     }
+    
   },
   getSingleMeal(req, res) {
     const id = req.params.id;
@@ -36,10 +45,11 @@ const MealController = {
   deleteMeal(req, res) {
     const { id } = req.params;
     const deleted = MealService.DeleteMeal(id);
-    return res.json({
-        status: 'success',
-        data: deleted
-    }).status(203);
+   if(!deleted) return res.json({}).status(500);
+   return res.json({
+    status: 'deleted',
+    data: deleted
+}).status(203);
   }
 
 };
