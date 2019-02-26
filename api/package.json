@@ -4,7 +4,7 @@
   "description": "A meal booking application",
   "main": "index.js",
   "scripts": {
-    "test": "nyc _mocha test/*.test.js --recursive --require @babel/register --timeout 10000 --exit",
+    "test": "nyc  _mocha test/*.test.js --recursive --require @babel/register --timeout 10000 --exit",
     "start": "nodemon --exec babel-node index.js",
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel ./api -d ./build",
@@ -13,6 +13,8 @@
     "coveralls-coverage": "coveralls < lcov.info",
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
     "coverage": "nyc npm test && npm run generate-lcov && npm run coveralls-coverage && npm run codeclimate-coverage"
+
+    
   },
   "repository": {
     "type": "git",
