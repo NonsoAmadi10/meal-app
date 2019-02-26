@@ -2,7 +2,7 @@ import MenuService from '../Services/menu.service';
 
 const MenuController = {
     fetchAllMenu(req, res) {
-        const allMeals = MenuService.fetchAllMeals();
+        const allMeals = MenuService.fetchAllMenu();
         return res.json({
             status: 'success',
             data: allMeals
