@@ -14,7 +14,7 @@ const OrderService = {
     });
     return Order;
   },
-  addMeal(order) {
+  addOrders(order) {
     if (order.customer == '' || order.meal == '' || order.price == '' || order.status == '') return false;
     const mealLength = dummyData.length;
     const lastId = dummyData[mealLength - 1].id;
@@ -23,11 +23,11 @@ const OrderService = {
     dummyData.push(order);
     return order;
   },
-  getAMeal(id) {
+  getOrderbyId(id) {
     const order = dummyData.find(meal => meal.id == id);
     return order || {};
   },
-  UpdateMeal(id, data) {
+  UpdateOrders(id, data) {
     const order = dummyData.find(item => item.id == id);
     const mealIndex = dummyData.indexOf(order);
     const newData = {
@@ -41,7 +41,7 @@ const OrderService = {
     const updated = dummyData.splice(mealIndex, 1, newData);
     return newData;
   },
-  DeleteMeal(id) {
+  DeleteOrder(id) {
     const deleteOrder = dummyData.find(item => item.id == id);
     const deleteIndex = dummyData.indexOf(deleteOrder);
     if (deleteIndex == -1) throw Error;

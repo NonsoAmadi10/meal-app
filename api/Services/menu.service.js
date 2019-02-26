@@ -2,7 +2,7 @@ import dummyData from '../utils/menu.data';
 import Menu from '../models/menu.model';
 
 const MenuService = {
-  fetchAllMeals() {
+  fetchAllMenu() {
     const validMeals = dummyData.map((meal) => {
       const newMeal = new Menu();
       newMeal.id = meal.id;
@@ -12,7 +12,7 @@ const MenuService = {
     });
     return validMeals;
   },
-  addMeal(meal) {
+  addMenu(meal) {
     const mealLength = dummyData.length;
     const lastId = dummyData[mealLength - 1].id;
     const newId = lastId + 1;
@@ -20,7 +20,7 @@ const MenuService = {
     dummyData.push(meal);
     return meal;
   },
-  getAMeal(id) {
+  getAMenu(id) {
     const meals = dummyData.find(meal => meal.id == id);
     return meals || {};
   },

@@ -11,8 +11,9 @@ chai.use(chaiHttp);
 describe('Menu',() => {
   it('should get all menu',(done) => {
     chai.request(app)
-    .get('/api/v1/menu/')
-    .end((err, res) => {
+      .get('/api/v1/menu/')
+      .end((err, res) => {
+      
         res.should.have.status(200);
         res.body.should.haveOwnProperty('data');
         res.body.data.should.be.an('array');
